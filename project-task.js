@@ -40,7 +40,7 @@ const todos = [
   */
 const incomplete = todos.filter(todo => !todo.completed);
 
-console.log("Tasks Not Yet Completed: ");
+console.log("Incomplete Tasks: ");
 console.log(incomplete);
 
 
@@ -55,7 +55,7 @@ console.log(incomplete);
   */
 const sortByPriority = todos.sort((a, b) => a.priority - b.priority);
 
-console.log("Tasks in Order of Priority: ");
+console.log("Sorted by Priority: ");
 console.log(sortByPriority);
 
 
@@ -66,7 +66,7 @@ console.log(sortByPriority);
   1. Use the `map()` method to return a new array.
   2. Use an anonymous function to modify each object.
   3. Change the `completed` property to `true` for every task.
-  */
+  
   const allTasksCompleted = todos.map(completed => {
     if (todo => !todo.completed) {
       return {
@@ -76,8 +76,8 @@ console.log(sortByPriority);
     }
   }
   
-  console.log(allTasksCompleted);
-  /*
+console.log("All Tasks Completed: "");
+  
   🔹 Task 4: Combine Filters
   
   Step-by-Step:
@@ -85,7 +85,12 @@ console.log(sortByPriority);
   2. Then, sort the filtered results by priority using `sort()`.
   3. Use method chaining to perform both steps together.
   */
-  
+  const incompleteTasks = todos.filter(todo => !todo.completed);
+  const sortIncompleteByPriority = incomplete.sort((a, b) => a.priority - b.priority);
+
+console.log("Sorted Incomplete Tasks: ");
+console.log(sortIncompleteByPriority);
+
   
   // ============================================
   // 🧪 Console Test Your Work
@@ -96,3 +101,23 @@ console.log(sortByPriority);
   // console.log("All Tasks Completed:", ...);
   // console.log("Sorted Incomplete Tasks:", ...);
   
+//   Incomplete Tasks:
+// [
+//   { task: 'Wash the dishes', completed: false, priority: 3 },
+//   { task: 'Buy groceries', completed: false, priority: 2 },
+//   { task: 'Walk the dog', completed: false, priority: 2 }
+// ]
+// Sorted by Priority:
+// [
+//   { task: 'Write a blog post', completed: true, priority: 1 },
+//   { task: 'Study JavaScript', completed: true, priority: 1 },
+//   { task: 'Buy groceries', completed: false, priority: 2 },
+//   { task: 'Walk the dog', completed: false, priority: 2 },
+//   { task: 'Wash the dishes', completed: false, priority: 3 }
+// ]
+// Sorted Incomplete Tasks:
+// [
+//   { task: 'Buy groceries', completed: false, priority: 2 },
+//   { task: 'Walk the dog', completed: false, priority: 2 },
+//   { task: 'Wash the dishes', completed: false, priority: 3 }
+// ]
